@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <title>CINEPOLIS</title>
+    <style>
+        body {
+            background: darkblue;
+        }
+
+        .cuadro {
+            width: 600px;
+
+            background: rgb(255, 255, 255);
+            padding: 30px;
+            margin: auto;
+            margin-top: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            box-shadow: 37px 37px 37px #000;
+            text-align: center;
+            float: left;
+        }
+
+        h1 {
+            font-size: 48pt;
+            text-align: center;
+            color: yellow;
+            text-shadow: 0.1em 0.1em 0.2em black;
+        }
+
+        .imagen {
+            width: 500px;
+            height: 300px;
+            float: right;
+            padding: 30px;
+            box-shadow: 37px 37px 37px #3021ff;
+        }
+
+        h2 {
+            font-size: 30pt;
+            text-align: center;
+            color: rgb(4, 0, 255);
+            text-shadow: 0.1em 0.1em 0.2em black;
+        }
+
+        label {
+            font-size: 15pt;
+            font-style: inherit;
+            text-align: justify;
+
+        }
+
+        input {
+            border-radius: 5px;
+            border: 3px;
+            border-color: #000;
+            background-color: rgb(184, 183, 183);
+            font-size: 20px;
+
+        }
+
+        .btnprocesar {
+            color: #0099CC;
+            background: transparent;
+            border: 2px solid #0099CC;
+            border-radius: 6px;
+            width: 80px;
+            height: 40px;
+            font-size: 15px;
+
+        }
+
+        .btnprocesar:hover {
+            background-color: #008CBA;
+            color: white;
+
+        }
+
+        .btnsalir {
+            color: #e62f29;
+            background: transparent;
+            border: 2px solid #cc0000;
+            border-radius: 6px;
+            width: 80px;
+            height: 40px;
+            font-size: 15px;
+
+        }
+
+        .btnsalir:hover {
+            background-color: #f00c0c;
+            color: white;
+
+        }
+    </style>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+
+<body>
+    <h1>Cinepolis</h1>
+    <div class="imagen"><img class="imagen" src="static\img\logo.jpg" width="500px" height="300px"></div>
+    <div class="cuadro">
+        <header class="text-center">
+            <h2>Datos de compra</h2>
+
+        </header>
+        <section class="border border-5 border-warning">
+
+            <form class="form-horizontal" action="/res" method="POST">
+                <div class="control-group">
+                    <label for="" class="control-label">Nombre:</label>
+                    <div class="controls">
+                        <input type="text" name="Nombre">
+                    </div>
+                    <br>
+                </div>
+                <div class="control-group">
+                    <label for="" class="control-label">Cantidad de compradores:</label>
+                    <div class="controls">
+                        <input type="number" name="Ncompradores">
+                    </div>
+                </div>
+                <br>
+                <div class="control-group">
+                    <label for="" class="control-label">Tarjeta Cineco:</label>
+                    <div class="controls">
+
+                        <input type="radio" name="tarjetac" value="1" />Si
+
+
+                        <input type="radio" name="tarjetac" value="2" />No
+
+                    </div>
+                </div>
+                <br>
+                <div class="control-group">
+                    <label for="" class="control-label">Cantidad de Boletos:</label>
+                    <div class="controls">
+                        <input type="number" name="Nboletos">
+                    </div>
+                </div>
+                <br>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btnprocesar">
+                            Procesar
+                        </button>
+                        <button type="submit" class="btnsalir">
+                            Salir
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
