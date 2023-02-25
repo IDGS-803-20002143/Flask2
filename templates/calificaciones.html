@@ -1,16 +1,11 @@
-{% extends "layout.html" %}
+{% extends "layout.html"%}
 
-{% block content %}
-
-<div class="col-xs-6">
-    {%from "_macros.html" import render_field%}
-    <form action="" method="post">
-
-        {{render_field(form.numero)}}
-
-        <input type="submit" value="Registrar">
-    </form>
-
-</div>
-<div class="col-xs-6"></div>
-{% endblock %}
+{%block content%}
+    <h2>Valor mínimo: {{lista.minimo}}</h2>
+    <h2>Valor máximo: {{lista.maximo}}</h2>
+    <h2>Promedio general: {{lista.promedio}}</h2>
+    <h2>Números repetidos:</h2>
+    {% for item in lista.listaRep %}
+    <h3>{{item}}</h3>
+    {% endfor %}
+{%endblock%}
