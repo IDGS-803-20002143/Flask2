@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% from 'macro2.html' import render_field, render_table %}
+
+<div class="container" style="background-image: 
+url(static/img/resitencia.jpg); height: 700px; width: 1000px;">
+
+</div>
+<div class="col-xs-6">
+   <form action=""
+         method="post"
+         novalidate>
+         {{ form.cscf_token }}
+         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+         {{ render_field(form.b1) }}
+         {{ render_field(form.b2) }}
+         {{ render_field(form.b3) }}
+         {{ render_field(form.tolerancia) }}
+      <input type="submit"
+             value="Calcular">
+   </form>
+</div>
+
+
+                   
+        {{render_table(form, cb1, cb2, cb3,cbt, resultadox, resultadoFMax, resultadoFMin)}}
+    
+    
+
+{% endblock %}

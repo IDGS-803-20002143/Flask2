@@ -1,0 +1,42 @@
+{% macro render_field(field) %}
+  <div class="control-group">
+    <div class="controls">
+      {{ field.label }}
+      {{ field(**kwargs)|safe}}
+    </div>
+  </div>
+  {% if field.errors %}
+  <ul>
+    {% for error in field.errors %}
+      <li style="color: red;">
+        {{ error }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}
+
+{% macro render_table(form, cb1, cb2, cb3, cbt, resultadox, resultadoFMax, resultadoFMin) %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Banda 1</th>
+        <th>Banda 2</th>
+        <th>Multiplicador</th>
+        <th>Tolerancia</th>
+        <th>Resultado</th>
+        <th>Resultado máximo</th>
+        <th>Resultado mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td bgcolor="{{cb1}}"; style="color: azure;">{{form.b1}}</td>
+      <td bgcolor="{{cb2}}"; style="color: azure;">{{form.b2}}</td>
+      <td bgcolor="{{cb3}}"; style="color: azure;">{{form.b3}}</td>
+      <td bgcolor="{{cbt}}"; style="color: azure;">{{form.tolerancia.data}}</td>
+      <td>{{resultadox}}</td>
+      <td>{{resultadoFMax}}</td>
+      <td>{{resultadoFMin}}</td>
+    </tbody>
+  </table>
+{% endmacro %}

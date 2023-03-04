@@ -1,0 +1,4 @@
+hola,hello
+pelota,ball
+azul,blue
+pelota,ball
